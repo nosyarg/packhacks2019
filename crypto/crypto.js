@@ -7,7 +7,8 @@ function hash(infile)
         var data = fs.readFileSync(infile,'ascii');
         return sjcl.codec.hex.fromBits((new sjcl.hash.sha256()).update(data).finalize());
 }
-
-var stupidstring = "bar.jpg";
+var datadict = {};
+var stupidstring = process.argv[2];
 var stupidhash = hash(stupidstring);
-console.log(stupidhash);
+datadict[stupidhash] = "TODAY";
+console.log(datadict[stupidhash]);
