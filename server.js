@@ -12,7 +12,7 @@ function allowCrossDomain(req, res, next) {
 }
 
 app.use(allowCrossDomain)
-app.use('/', express.static(__dirname + '/public'))
+app.use('/', express.static(__dirname + '/src'))
 app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
