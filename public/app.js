@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (blockstack.isUserSignedIn()) {
     var profile = blockstack.loadUserData().profile
       showProfile(profile)
+    window.location.href = "/www/index.html"
   } else if (blockstack.isSignInPending()) {
     blockstack.handlePendingSignIn().then(function(userData) {
       window.location = window.location.origin
